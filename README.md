@@ -42,7 +42,7 @@ $\mathbb{P}(PIP3 = high | Plcg = high) = 0.14$
 ### Reasoning Types
 
 Many of the QE pairs in QUITE are associated with a specific kind of _reasoning type_.
-Consider a Bayesian network with three nodes and two edges: $V_1 \rightarrow V_3 \leftarrow V_2$.
+Consider a Bayesian network with three nodes and two edges: $V_1 \rightarrow V_2 \leftarrow V_3$.
 There are the following three reasoning types available in QUITE:
 * __causal__: In the case of the three-node network, this would correspond to observing $V_1$ and reasoning about the probability of $V_2$.
 * __evidential__: This is the other way around, where we observe the effect $V_2$ and reason about the cause $V_1$.
@@ -115,7 +115,9 @@ Our dataset is divided into three splits (`train`, `validation`, `test`), please
 
 ## Setup
 
-Setup the Python virtual environment using conda by executing `conda env create -f environment.yml`. Additionally, to be able to use [flash attention](https://github.com/Dao-AILab/flash-attention), please execute the following command **after** having created and activated the conda environment: `pip install flash-attn==2.5.8 --no-build-isolation`
+Setup the Python virtual environment using conda by executing `conda env create -f environment.yml`. 
+'''Fixed: pip install pynvml manually. bdo not found???
+Additionally, to be able to use [flash attention](https://github.com/Dao-AILab/flash-attention), please execute the following command **after** having created and activated the conda environment: `pip install flash-attn==2.5.8 --no-build-isolation`
 
 You might additionally add the root folder of this project to the `$PYTHONPATH` environment variable. This enables all scripts to automatically find the imports.
 
